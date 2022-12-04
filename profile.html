@@ -8,24 +8,25 @@
 </head>
 <body>
     <script>
+    // Variables
         const user_year = +prompt('Enter your year of birth');
         const user_city = prompt('Enter your hometown');
         const user_sport = prompt('Enter your favorite sport');
-        let capitalof;
- 
-        const city_msg2 = `You live in the ${user_city} city`;
         let champion;
         const year = new Date().getFullYear();
         let age;
+        let capitalof;
         let city_msg;
         let sports_msg;
 
+    // Age script
         if (user_year > 0) {
             age = year - user_year;
         }   else {
             age = `Ooops, you haven't entered your year of your birth`;
         }
 
+    // Sports script (done using switch/case just for practice)
         switch (user_sport) {
             case 'skate':
               champion = 'Tony Hawk';
@@ -54,6 +55,7 @@
                 sports_msg = `Cool! Want to be ${champion}?`;
             }
 
+    // City script
         switch (user_city) {
             case 'London' :
                 capitalof = 'England';
@@ -83,9 +85,9 @@
             city_msg = `Ooops, you haven't entered your hometownh `;
         }
 
+    // Final messege
         alert (`${age} \n${city_msg} \n${sports_msg}`);
     </script>
-
 </body>
 </html>
 
