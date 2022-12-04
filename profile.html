@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const user_year = +prompt('Enter your year of birth');
+        const user_city = prompt('Enter your hometown');
+        const user_sport = prompt('Enter your favorite sport');
+        let capitalof;
+        const city_messege1 = 'You live in the capital of';
+        const city_messege2 = `You live in the ${user_city} city`;
+
+        switch (user_city) {
+            case 'London' :
+                capitalof = 'England';
+                alert (`${city_messege1} ${capitalof}`);
+            break;
+            case 'Kyiv' :
+                capitalof = 'Ukraine';
+             alert (`${city_messege1} ${capitalof}`);   
+            break;
+            case 'Washington' :
+                capitalof = 'USA';
+                alert (`${city_messege1} ${capitalof}`);
+                break;
+            default:
+                alert (city_messege2);
+        }
+    </script>
+ 
+</body>
+</html>
+
+<!-- // <script>
+//         const user_year = +prompt('Enter your year of birth');
+//         const user_city = prompt('Enter your hometown');
+//         const user_sport = prompt('Enter your favorite sport');
+//         let capitalof;
+
+//         switch (user_city) {
+//             case 'London' :
+//                 capitalof = 'England';
+//                 alert (`You live in the capital of ${capitalof}`);
+//                 break;
+//             case 'Kyiv' :
+//                 capitalof = 'Ukraine';
+//                 alert (`You live in the capital of ${capitalof}`);
+//                 break;
+//             case 'Washington' :
+//                 capitalof = 'USA';
+//                 alert (`You live in the capital of ${capitalof}`);
+//                 break;
+//             default:
+//                 alert (`You live in the ${user_city} city`);
+//         }
+//     </script> -->
