@@ -12,50 +12,80 @@
         const user_city = prompt('Enter your hometown');
         const user_sport = prompt('Enter your favorite sport');
         let capitalof;
-        const city_messege1 = 'You live in the capital of';
-        const city_messege2 = `You live in the ${user_city} city`;
+ 
+        const city_msg2 = `You live in the ${user_city} city`;
+        let champion;
+        const year = new Date().getFullYear();
+        let age;
+        let city_msg;
+        let sports_msg;
+
+        if (user_year > 0) {
+            age = year - user_year;
+        }   else {
+            age = `Ooops, you haven't entered your year of your birth`;
+        }
+
+        switch (user_sport) {
+            case 'skate':
+              champion = 'Tony Hawk';
+            break;
+            case 'football':
+                champion = 'Messi';
+            break;
+            case 'parkour':
+                champion = 'David Belle';
+            break;
+            case '' :
+                champion = null;
+            break;
+            case null :
+                champion = null;
+            break;
+            default:
+                champion = user_sport;
+        }
+
+        if (champion === user_sport) {
+                    sports_msg = `Your favorite sport is`;
+            }   else if (typeof champion === 'object') {
+                    sports_msg = `Ooops, you haven't entered your favorite sport`;
+            }   else if (typeof champion === 'string') {
+                sports_msg = `Cool! Want to be ${champion}?`;
+            }
 
         switch (user_city) {
             case 'London' :
                 capitalof = 'England';
-                alert (`${city_messege1} ${capitalof}`);
             break;
             case 'Kyiv' :
                 capitalof = 'Ukraine';
-             alert (`${city_messege1} ${capitalof}`);   
             break;
             case 'Washington' :
                 capitalof = 'USA';
-                alert (`${city_messege1} ${capitalof}`);
                 break;
+            case '' :
+                capitalof = null;
+                break;
+            case null :
+                capitalof = null;
+                break;         
             default:
-                alert (city_messege2);
+                capitalof = user_city;
+                break;
         }
+
+        if (capitalof === user_city) {
+            city_msg =`You live in the ${user_city} city`;
+        } else if (typeof capitalof === "string") {
+            city_msg = `You live in the capital of ${capitalof}`;
+        } else if (typeof capitalof === "object") {
+            city_msg = `Ooops, you haven't entered your hometownh `;
+        }
+
+        alert (`${age} \n${city_msg} \n${sports_msg}`);
     </script>
- 
+
 </body>
 </html>
 
-<!-- // <script>
-//         const user_year = +prompt('Enter your year of birth');
-//         const user_city = prompt('Enter your hometown');
-//         const user_sport = prompt('Enter your favorite sport');
-//         let capitalof;
-
-//         switch (user_city) {
-//             case 'London' :
-//                 capitalof = 'England';
-//                 alert (`You live in the capital of ${capitalof}`);
-//                 break;
-//             case 'Kyiv' :
-//                 capitalof = 'Ukraine';
-//                 alert (`You live in the capital of ${capitalof}`);
-//                 break;
-//             case 'Washington' :
-//                 capitalof = 'USA';
-//                 alert (`You live in the capital of ${capitalof}`);
-//                 break;
-//             default:
-//                 alert (`You live in the ${user_city} city`);
-//         }
-//     </script> -->
