@@ -38,20 +38,21 @@
                 champion = 'David Belle';
             break;
             case '' :
-                champion = null;
+                champion = 'empty';
             break;
             case null :
-                champion = null;
+                champion = 'empty';
             break;
             default:
                 champion = user_sport;
+            break;
         }
 
-        if (champion === user_sport) {
-                    sports_msg = `Your favorite sport is`;
-            }   else if (typeof champion === 'object') {
+        if (champion === 'empty') {
                     sports_msg = `Ooops, you haven't entered your favorite sport`;
-            }   else if (typeof champion === 'string') {
+            }   else if (champion === user_sport) {
+                    sports_msg = `Your favorite sport is ${user_sport}`;
+            }    else if (typeof champion === 'string') {
                 sports_msg = `Cool! Want to be ${champion}?`;
             }
 
@@ -67,10 +68,10 @@
                 capitalof = 'USA';
                 break;
             case '' :
-                capitalof = null;
+                capitalof = 'empty';
                 break;
             case null :
-                capitalof = null;
+                capitalof = 'empty';
                 break;         
             default:
                 capitalof = user_city;
@@ -79,11 +80,11 @@
 
         if (capitalof === user_city) {
             city_msg =`You live in the ${user_city} city`;
-        } else if (typeof capitalof === "string") {
-            city_msg = `You live in the capital of ${capitalof}`;
-        } else if (typeof capitalof === "object") {
+        } else if (capitalof === 'empty') {
             city_msg = `Ooops, you haven't entered your hometownh `;
-        }
+        }else if (typeof capitalof === 'string') {
+            city_msg = `You live in the capital of ${capitalof}`;
+        } 
 
     // Final messege
         alert (`${age} \n${city_msg} \n${sports_msg}`);
